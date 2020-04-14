@@ -5,13 +5,13 @@
         android:id="@+id/scoreboard"
         android:title=""
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_image_scoreboard"
+        android:icon="@drawable/ic_noun_scoreboard"
         />
 
     <item
         android:id="@+id/settings"
         android:title=""
         app:showAsAction="always"
-        android:icon="@drawable/ic_image_settings"
+        android:icon="@drawable/ic_noun_settings"
         />
 </menu>
