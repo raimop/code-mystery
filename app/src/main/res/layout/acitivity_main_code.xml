@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginRight="152dp"
+        android:text="@string/code_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/expandable_title_bg"
+        app:fontFamily="sans-serif"
+        android:textSize="20sp"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/firstGeneratedNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginRight="152dp"
+        android:layout_marginTop="50dp"
+        android:text="Random"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorAccent"
+        app:fontFamily="sans-serif"
+        android:textSize="20sp"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/secondGeneratedNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginRight="152dp"
+        android:layout_marginTop="100dp"
+        android:text="Random"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorAccent"
+        app:fontFamily="sans-serif"
+        android:textSize="20sp"
+        android:padding="5dp"
+        />
+
+    <TextView
+        android:id="@+id/thirdGeneratedNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginRight="152dp"
+        android:layout_marginTop="150dp"
+        android:text="Random"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorAccent"
+        app:fontFamily="sans-serif"
+        android:textSize="20sp"
+        android:padding="5dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

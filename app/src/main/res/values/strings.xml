@@ -2,21 +2,23 @@
     <string name="app_name">Code Mystery</string>
 
     <string name="activity_main">Main text</string>
-    <string name="activity_2">Second text</string>
-    <string name="activity_3">Third text</string>
+    <string name="activity_settings">Here comes settings</string>
+    <string name="activity_scoreboard">Here comes scoreboard</string>
 
     <string name="button_awesome">Click me for awesome toasts</string>
-    <string name="button_activity_main">Go to Activity 2</string>
+    <string name="button_activity_main">Enter code</string>
     <string name="button_activity_2">Go to Activity 3</string>
 
-    <string name="expandable1_title">First expandable</string>
-    <string name="expandable1_desc">Description</string>
-    <string name="expandable1_content">I am first</string>
+    <string name="expandable1_title">First hint</string>
+    <string name="expandable1_desc">Click to open</string>
+    <string name="expandable1_content">Here comes the first hint</string>
 
-    <string name="expandable2_title">Second expandable</string>
-    <string name="expandable2_desc">Description</string>
-    <string name="expandable2_content">I am second</string>
+    <string name="expandable2_title">Second hint</string>
+    <string name="expandable2_desc">Click to open</string>
+    <string name="expandable2_content">Here comes the second hint</string>
 
     <string name="expandable3_title">Free cat</string>
-    <string name="expandable3_desc">Description</string>
+    <string name="expandable3_desc">Do you dare?</string>
+    <string name="settings_image">settings image</string>
+    <string name="code_title">Crack the code!</string>
 </resources>
