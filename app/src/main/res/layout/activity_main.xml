@@ -6,241 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/activity_main"
+    <include layout="@layout/acitivity_main_code" />
+    <include layout="@layout/acitivity_main_expandable" />
+
+    <EditText
+        android:id="@+id/firstEnteredDigit"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="250dp"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/secondEnteredDigit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/secondEnteredDigit"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="250dp"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/thirdEnteredDigit"
+        app:layout_constraintStart_toEndOf="@+id/firstEnteredDigit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/thirdEnteredDigit"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginRight="51dp"
+        android:layout_marginTop="250dp"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <!-- First tab begin -->
-        <com.github.florent37.expansionpanel.ExpansionHeader
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/expandable_title_bg"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            app:expansion_headerIndicator="@id/headerIndicator"
-            app:expansion_layout="@id/expansionLayout"
-            app:expansion_toggleOnClick="true">
-
-            <!-- HEADER -->
-
-            <TextView
-                android:id="@+id/header1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/expandable1_title"
-                android:textColor="@color/expandable_title"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="160dp"
-                android:text="@string/expandable1_desc"
-                android:textColor="@color/expandable_title_desc" />
-
-            <!-- HEADER INDICATOR -->
-
-            <ImageView
-                android:id="@+id/headerIndicator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|end"
-                android:layout_marginLeft="16dp"
-                android:adjustViewBounds="true"
-                app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
-
-
-        </com.github.florent37.expansionpanel.ExpansionHeader>
-
-        <com.github.florent37.expansionpanel.ExpansionLayout
-            android:id="@+id/expansionLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/expandable_content_bg"
-                android:gravity="center"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
-                android:text="@string/expandable1_content"
-                android:textColor="@color/expandable_content" />
-
-        </com.github.florent37.expansionpanel.ExpansionLayout>
-        <!-- First tab end -->
-
-        <!-- Second tab begin -->
-        <com.github.florent37.expansionpanel.ExpansionHeader
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/expandable_title_bg"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            app:expansion_headerIndicator="@id/headerIndicator2"
-            app:expansion_layout="@id/expansionLayout2"
-            app:expansion_toggleOnClick="true">
-
-            <!-- HEADER -->
-
-            <TextView
-                android:id="@+id/header2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/expandable2_title"
-                android:textColor="@color/expandable_title"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="160dp"
-                android:gravity="center"
-                android:text="@string/expandable2_desc"
-                android:textColor="@color/expandable_title_desc" />
-
-            <!-- HEADER INDICATOR -->
-
-            <ImageView
-                android:id="@+id/headerIndicator2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|end"
-                android:layout_marginLeft="16dp"
-                android:adjustViewBounds="true"
-                app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
-
-
-        </com.github.florent37.expansionpanel.ExpansionHeader>
-
-        <com.github.florent37.expansionpanel.ExpansionLayout
-            android:id="@+id/expansionLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@color/expandable_content_bg"
-                android:gravity="center"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
-                android:text="@string/expandable2_content"
-                android:textColor="@color/expandable_content" />
-
-        </com.github.florent37.expansionpanel.ExpansionLayout>
-        <!-- Second tab end -->
-
-        <!-- Third tab start -->
-        <com.github.florent37.expansionpanel.ExpansionHeader
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/expandable_title_bg"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            app:expansion_headerIndicator="@id/headerIndicator3"
-            app:expansion_layout="@id/expansionLayout3"
-            app:expansion_toggleOnClick="true">
-
-            <!-- HEADER -->
-
-            <TextView
-                android:id="@+id/header3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/expandable3_title"
-                android:textColor="@color/expandable_title"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="160dp"
-                android:text="@string/expandable3_desc"
-                android:textColor="@color/expandable_title_desc" />
-
-            <!-- HEADER INDICATOR -->
-
-            <ImageView
-                android:id="@+id/headerIndicator3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|end"
-                android:layout_marginLeft="16dp"
-                android:adjustViewBounds="true"
-                app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
-
-
-        </com.github.florent37.expansionpanel.ExpansionHeader>
-
-        <com.github.florent37.expansionpanel.ExpansionLayout
-            android:id="@+id/expansionLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#EEE">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/cat" />
-
-        </com.github.florent37.expansionpanel.ExpansionLayout>
-        <!-- Third tab end -->
-
-    </LinearLayout>
+        app:layout_constraintStart_toEndOf="@+id/secondEnteredDigit"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/submitCode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:freezesText="true"
-        android:onClick="openActivity2"
+        android:onClick="submitCode"
         android:text="@string/button_activity_main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="24dp"
-        android:onClick="getFancyToast"
-        android:text="@string/button_awesome"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
