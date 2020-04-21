@@ -6,35 +6,21 @@ import java.util.List;
 import java.util.Random;
 
 public class Hint {
-    int minR = 0;
-    int maxR = 999;
-    String actualNumber;
+    private String actualNumber;
 
     public Hint(String actual){
         this.actualNumber = actual;
-    }
-    private static int getRandomNumberInRange(int min, int max) { // https://mkyong.com/java/java-generate-random-integers-in-a-range/
-        if (min >= max) {
-            throw new IllegalArgumentException("max must be greater than min");
-        }
-
-        Random r = new Random();
-        return r.nextInt((max - min) + 1) + min;
-    }
-
-    private String getRandomNumberStringDefaultRange(){
-        return Integer.toString(getRandomNumberInRange(this.minR, this.maxR));
     }
 
     public static String shuffleString(String string) // https://stackoverflow.com/a/11130209
     {
         List<String> letters = Arrays.asList(string.split(""));
         Collections.shuffle(letters);
-        String shuffled = "";
+        StringBuilder shuffled = new StringBuilder();
         for (String letter : letters) {
-            shuffled += letter;
+            shuffled.append(letter);
         }
-        return shuffled;
+        return shuffled.toString();
     }
 
     public String oneCorrectWellPlaced(){
@@ -44,7 +30,7 @@ public class Hint {
                 (resultString.charAt(0) != actualNumber.charAt(0) && resultString.charAt(1) == actualNumber.charAt(1) && resultString.charAt(2) != actualNumber.charAt(2)) ||
                 (resultString.charAt(0) != actualNumber.charAt(0) && resultString.charAt(1) != actualNumber.charAt(1) && resultString.charAt(2) == actualNumber.charAt(2));
         while(!condition){
-            resultString = getRandomNumberStringDefaultRange();
+            resultString = MainActivity.getRandomNumberStringDefaultRange();
         }
         return resultString;
     }
@@ -71,7 +57,7 @@ public class Hint {
         String resultString = "";
         boolean condition = resultString.charAt(0) != actualNumber.charAt(0) && resultString.charAt(1) != actualNumber.charAt(1) && resultString.charAt(2) != actualNumber.charAt(2);
         while(!condition){
-            resultString = getRandomNumberStringDefaultRange();
+            resultString = MainActivity.getRandomNumberStringDefaultRange();
         }
         return resultString;
     }
