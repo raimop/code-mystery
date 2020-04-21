@@ -1,61 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include layout="@layout/activity_main_inputs" />
+
     <include layout="@layout/acitivity_main_code" />
-    <include layout="@layout/acitivity_main_expandable" />
 
-    <EditText
-        android:id="@+id/firstEnteredDigit"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="51dp"
-        android:layout_marginLeft="51dp"
-        android:layout_marginTop="250dp"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/secondEnteredDigit"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/secondEnteredDigit"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="250dp"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/thirdEnteredDigit"
-        app:layout_constraintStart_toEndOf="@+id/firstEnteredDigit"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/thirdEnteredDigit"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
-        android:layout_marginTop="250dp"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/secondEnteredDigit"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/submitCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
-        android:freezesText="true"
-        android:onClick="submitCode"
-        android:text="@string/button_activity_main"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <include layout="@layout/acitivity_main_expandable"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
