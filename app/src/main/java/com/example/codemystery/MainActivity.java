@@ -14,16 +14,19 @@ import android.widget.TextView;
 
 import com.shashank.sony.fancytoastlib.FancyToast;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class MainActivity extends AppCompatActivity {
 
-    private final String successMessage = "Yay! You have solved the puzzle";
-    private final String failMessage = "Not the right code. Try again!";
     TextView randomOne, randomTwo, randomThree;
     EditText guessedOne, guessedTwo, guessedThree;
     int enteredFirst, enteredSecond, enteredThird;
     int firstRandom, secondRandom, thirdRandom;
     String firstNumberFromMemory, secondNumberFromMemory, thirdNumberFromMemory;
-    boolean firstTimeAppOpen;
+    static Timer timer;
+    int count=0;
+    boolean firstTimeAppOpen = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,26 +95,57 @@ public class MainActivity extends AppCompatActivity {
         randomTwo.setText(String.valueOf(secondRandom));
         randomThree.setText(String.valueOf(thirdRandom));
         SharedPreferences keepNumbersInMemory = this.getSharedPreferences("codeNumbers", MODE_PRIVATE);
-        SharedPreferences.Editor edit = keepNumbersInMemory.edit();
-        edit.putString("firstRandomValue", String.valueOf(firstRandom));
-        edit.putString("secondRandomValue", String.valueOf(secondRandom));
-        edit.putString("thirdRandomValue", String.valueOf(thirdRandom));
-        edit.apply();
+        SharedPreferences.Editor numbers = keepNumbersInMemory.edit();
+        numbers.putString("firstRandomValue", String.valueOf(firstRandom));
+        numbers.putString("secondRandomValue", String.valueOf(secondRandom));
+        numbers.putString("thirdRandomValue", String.valueOf(thirdRandom));
+        numbers.apply();
         firstTimeAppOpen = false;
+        startTimer();
+    }
+
+    public void startTimer(){
+        timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        count++;
+                    }
+                });
+            }
+        }, 1000, 1000);
+
     }
 
     public void submitCode(View view){
-        guessedOne = (EditText)findViewById(R.id.firstEnteredDigit);
-        guessedTwo = (EditText)findViewById(R.id.secondEnteredDigit);
-        guessedThree = (EditText)findViewById(R.id.thirdEnteredDigit);
-        enteredFirst = Integer.parseInt(guessedOne.getText().toString());
-        enteredSecond = Integer.parseInt(guessedTwo.getText().toString());
-        enteredThird = Integer.parseInt(guessedThree.getText().toString());
-        if(firstRandom==enteredFirst && secondRandom==enteredSecond && thirdRandom==enteredThird){
-            FancyToast.makeText(this, successMessage, 2, FancyToast.SUCCESS, false).show();
-            generateNewRandomNumbers();
-        } else {
-            FancyToast.makeText(this, failMessage, 2, FancyToast.WARNING, false).show();
+        try {
+            guessedOne = (EditText)findViewById(R.id.firstEnteredDigit);
+            guessedTwo = (EditText)findViewById(R.id.secondEnteredDigit);
+            guessedThree = (EditText)findViewById(R.id.thirdEnteredDigit);
+            enteredFirst = Integer.parseInt(guessedOne.getText().toString());
+            enteredSecond = Integer.parseInt(guessedTwo.getText().toString());
+            enteredThird = Integer.parseInt(guessedThree.getText().toString());
+            if(firstRandom==enteredFirst && secondRandom==enteredSecond && thirdRandom==enteredThird){
+                FancyToast.makeText(this, getString(R.string.attempt_solved), 2, FancyToast.SUCCESS, false).show();
+
+                SharedPreferences secondsCount = this.getSharedPreferences("secondsCount", MODE_PRIVATE);
+                SharedPreferences.Editor seconds = secondsCount.edit();
+                seconds.putString("seconds", String.valueOf(count));
+                seconds.apply();
+                timer.cancel(); // not working???
+                generateNewRandomNumbers();
+            } else {
+                FancyToast.makeText(this, getString(R.string.attempt_failed), 2, FancyToast.WARNING, false).show();
+            }
         }
+        catch (Exception ex){
+            FancyToast.makeText(this, getString(R.string.attempt_error), 2, FancyToast.WARNING, false).show();
+        }
+
     }
 }
