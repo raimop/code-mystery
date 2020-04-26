@@ -19,8 +19,6 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final String successMessage = "Yay! You have solved the puzzle";
-    private final String failMessage = "Not the right code. Try again!";
     TextView randomOne, randomTwo, randomThree;
     EditText guessedOne, guessedTwo, guessedThree;
     int enteredFirst, enteredSecond, enteredThird;
@@ -125,23 +123,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitCode(View view){
-        guessedOne = (EditText)findViewById(R.id.firstEnteredDigit);
-        guessedTwo = (EditText)findViewById(R.id.secondEnteredDigit);
-        guessedThree = (EditText)findViewById(R.id.thirdEnteredDigit);
-        enteredFirst = Integer.parseInt(guessedOne.getText().toString());
-        enteredSecond = Integer.parseInt(guessedTwo.getText().toString());
-        enteredThird = Integer.parseInt(guessedThree.getText().toString());
-        if(firstRandom==enteredFirst && secondRandom==enteredSecond && thirdRandom==enteredThird){
-            FancyToast.makeText(this, successMessage, 2, FancyToast.SUCCESS, false).show();
+        try {
+            guessedOne = (EditText)findViewById(R.id.firstEnteredDigit);
+            guessedTwo = (EditText)findViewById(R.id.secondEnteredDigit);
+            guessedThree = (EditText)findViewById(R.id.thirdEnteredDigit);
+            enteredFirst = Integer.parseInt(guessedOne.getText().toString());
+            enteredSecond = Integer.parseInt(guessedTwo.getText().toString());
+            enteredThird = Integer.parseInt(guessedThree.getText().toString());
+            if(firstRandom==enteredFirst && secondRandom==enteredSecond && thirdRandom==enteredThird){
+                FancyToast.makeText(this, getString(R.string.attempt_solved), 2, FancyToast.SUCCESS, false).show();
 
-            SharedPreferences secondsCount = this.getSharedPreferences("secondsCount", MODE_PRIVATE);
-            SharedPreferences.Editor seconds = secondsCount.edit();
-            seconds.putString("seconds", String.valueOf(count));
-            seconds.apply();
-            timer.cancel(); // not working???
-            generateNewRandomNumbers();
-        } else {
-            FancyToast.makeText(this, failMessage, 2, FancyToast.WARNING, false).show();
+                SharedPreferences secondsCount = this.getSharedPreferences("secondsCount", MODE_PRIVATE);
+                SharedPreferences.Editor seconds = secondsCount.edit();
+                seconds.putString("seconds", String.valueOf(count));
+                seconds.apply();
+                timer.cancel(); // not working???
+                generateNewRandomNumbers();
+            } else {
+                FancyToast.makeText(this, getString(R.string.attempt_failed), 2, FancyToast.WARNING, false).show();
+            }
         }
+        catch (Exception ex){
+            FancyToast.makeText(this, getString(R.string.attempt_error), 2, FancyToast.WARNING, false).show();
+        }
+
     }
 }

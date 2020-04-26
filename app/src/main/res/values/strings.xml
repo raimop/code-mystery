@@ -21,4 +21,8 @@
     <string name="expandable3_desc">Do you dare?</string>
     <string name="settings_image">settings image</string>
     <string name="code_title">Crack the code!</string>
+
+    <string name="attempt_solved">Yay! You have solved the puzzle</string>
+    <string name="attempt_failed">Not the right code. Try again!</string>
+    <string name="attempt_error">Please fill all three fields with numbers and try again.</string>
 </resources>
