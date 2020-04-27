@@ -24,41 +24,37 @@ public class Hint {
     }
 
     public String oneCorrectWellPlaced(){
-        String resultString = "";
-        boolean condition =
-                (resultString.charAt(0) == actualNumber.charAt(0) && resultString.charAt(1) != actualNumber.charAt(1) && resultString.charAt(2) != actualNumber.charAt(2)) ||
-                (resultString.charAt(0) != actualNumber.charAt(0) && resultString.charAt(1) == actualNumber.charAt(1) && resultString.charAt(2) != actualNumber.charAt(2)) ||
-                (resultString.charAt(0) != actualNumber.charAt(0) && resultString.charAt(1) != actualNumber.charAt(1) && resultString.charAt(2) == actualNumber.charAt(2));
-        while(!condition){
-            resultString = MainActivity.getRandomNumberStringDefaultRange();
+        while(true) {
+            String resultString = MainActivity.getRandomNumberStringDefaultRange();
+            boolean condition =
+                    (resultString.charAt(0) == actualNumber.charAt(0) && resultString.charAt(1) != actualNumber.charAt(1) && resultString.charAt(2) != actualNumber.charAt(2)) ||
+                    (resultString.charAt(0) != actualNumber.charAt(0) && resultString.charAt(1) == actualNumber.charAt(1) && resultString.charAt(2) != actualNumber.charAt(2)) ||
+                    (resultString.charAt(0) != actualNumber.charAt(0) && resultString.charAt(1) != actualNumber.charAt(1) && resultString.charAt(2) == actualNumber.charAt(2));
+            if(condition) return resultString;
         }
-        return resultString;
     }
     public String oneCorrectWrongPlaced(){
-        String resultString = "";
-        boolean condition = resultString.charAt(0) != actualNumber.charAt(0) && resultString.charAt(1) != actualNumber.charAt(1) && resultString.charAt(2) != actualNumber.charAt(2);
-        while(!condition){
-            resultString = shuffleString(oneCorrectWellPlaced());
+        while(true) {
+            String resultString = resultString = shuffleString(oneCorrectWellPlaced());
+            boolean condition = resultString.charAt(0) != actualNumber.charAt(0) && resultString.charAt(1) != actualNumber.charAt(1) && resultString.charAt(2) != actualNumber.charAt(2);
+            if(condition) return resultString;
         }
-        return resultString;
     }
     public String twoCorrectWrongPlaced(){
-        String resultString = "";
-        boolean condition = ((actualNumber.contains(String.valueOf(resultString.charAt(0)) + String.valueOf(resultString.charAt(1)))) ||
-                            (actualNumber.contains(String.valueOf(resultString.charAt(1)) + String.valueOf(resultString.charAt(2)))) ||
-                            (actualNumber.contains(String.valueOf(resultString.charAt(0)) + String.valueOf(resultString.charAt(2))))) &&
-                            resultString.charAt(0) != actualNumber.charAt(0) && resultString.charAt(1) != actualNumber.charAt(1) && resultString.charAt(2) != actualNumber.charAt(2);
-        while(!condition){
-            resultString = shuffleString(oneCorrectWellPlaced());
+        while(true){
+            String resultString = shuffleString(oneCorrectWellPlaced());
+            boolean condition = ((actualNumber.contains(String.valueOf(resultString.charAt(0)) + String.valueOf(resultString.charAt(1)))) ||
+                    (actualNumber.contains(String.valueOf(resultString.charAt(1)) + String.valueOf(resultString.charAt(2)))) ||
+                    (actualNumber.contains(String.valueOf(resultString.charAt(0)) + String.valueOf(resultString.charAt(2))))) &&
+                    resultString.charAt(0) != actualNumber.charAt(0) && resultString.charAt(1) != actualNumber.charAt(1) && resultString.charAt(2) != actualNumber.charAt(2);
+            if(condition) return resultString;
         }
-        return resultString;
     }
     public String noneCorrect(){
-        String resultString = "";
-        boolean condition = resultString.charAt(0) != actualNumber.charAt(0) && resultString.charAt(1) != actualNumber.charAt(1) && resultString.charAt(2) != actualNumber.charAt(2);
-        while(!condition){
-            resultString = MainActivity.getRandomNumberStringDefaultRange();
+        while(true){
+            String resultString = MainActivity.getRandomNumberStringDefaultRange();
+            boolean condition = !resultString.substring(0, 3).equals(actualNumber.substring(0, 3));
+            if(condition) return resultString;
         }
-        return resultString;
     }
 }
