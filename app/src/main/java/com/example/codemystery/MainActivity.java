@@ -38,14 +38,14 @@ public class MainActivity extends AppCompatActivity {
         generateActionBar();
         startCodePuzzle();
 
-       // String actualNumber = getRandomNumberStringDefaultRange();
-       // Hint hint = new Hint(actualNumber);
+        String actualNumber = getRandomNumberStringDefaultRange();
+        Hint hint = new Hint(actualNumber);
 
-       // Log.i("CodeMystery", "Actual: " + actualNumber);
-       // Log.i("CodeMystery", "1well: " + hint.oneCorrectWellPlaced());
-       // Log.i("CodeMystery", "1wrong: " + hint.oneCorrectWrongPlaced());
-       // Log.i("CodeMystery", "2wrong: " + hint.twoCorrectWrongPlaced());
-       // Log.i("CodeMystery", "allwrong: " + hint.noneCorrect());
+        Log.i("CodeMystery-debug", "Actual: " + actualNumber);
+        Log.i("CodeMystery-debug", "1good: " + hint.oneCorrectWellPlaced());
+        Log.i("CodeMystery-debug", "1wrong: " + hint.oneCorrectWrongPlaced());
+        Log.i("CodeMystery-debug", "2wrong: " + hint.twoCorrectWrongPlaced());
+        Log.i("CodeMystery-debug", "allwrong: " + hint.noneCorrect());
     }
 
     public void generateActionBar(){
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
 
     static String getRandomNumberStringDefaultRange(){
         int maxR = 999;
-        int minR = 0;
+        int minR = 100;
         return Integer.toString(getRandomNumberInRange(minR, maxR));
     }
 

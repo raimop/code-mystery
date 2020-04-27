@@ -62,7 +62,8 @@ public class Hint {
     public String noneCorrect(){
         while(true){
             String resultString = MainActivity.getRandomNumberStringDefaultRange();
-            boolean condition = !resultString.contains(actualNumber);
+            boolean condition = !resultString.contains(actualNumber) &&
+                    resultString.charAt(0) != resultString.charAt(1) && resultString.charAt(1) != resultString.charAt(2) && resultString.charAt(0) != resultString.charAt(2);
             if(condition) return resultString;
         }
     }
