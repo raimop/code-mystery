@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/expandable_content_bg"/>
 
-    <item>
-        <bitmap android:src="@drawable/splash_bg"
-            android:gravity="fill_horizontal|fill_vertical"/>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/background" >
+        <shape android:shape="rectangle">
+            <solid android:color="@color/colorPrimary"/>
+        </shape>
+    </item>
+    <item android:id="@+id/item_img">
+        <bitmap  android:src="@drawable/splash_bg"
+            android:gravity="top"/>
     </item>
 </layer-list>
