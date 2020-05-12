@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 
 import com.shashank.sony.fancytoastlib.FancyToast;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -35,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
 
         generateActionBar();
         startCodePuzzle();
+
+        String actualNumber = getRandomNumberStringDefaultRange();
+        Hint hint = new Hint(actualNumber);
+
+        Log.i("CodeMystery-debug", "Actual: " + actualNumber);
+        Log.i("CodeMystery-debug", "1good: " + hint.oneCorrectWellPlaced());
+        Log.i("CodeMystery-debug", "1wrong: " + hint.oneCorrectWrongPlaced());
+        Log.i("CodeMystery-debug", "2wrong: " + hint.twoCorrectWrongPlaced());
+        Log.i("CodeMystery-debug", "allwrong: " + hint.noneCorrect());
     }
 
     public void generateActionBar(){
@@ -120,6 +131,21 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 1000, 1000);
 
+    }
+
+    private static int getRandomNumberInRange(int min, int max) { // https://mkyong.com/java/java-generate-random-integers-in-a-range/
+        if (min >= max) {
+            throw new IllegalArgumentException("max must be greater than min");
+        }
+
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
+    }
+
+    static String getRandomNumberStringDefaultRange(){
+        int maxR = 999;
+        int minR = 100;
+        return Integer.toString(getRandomNumberInRange(minR, maxR));
     }
 
     public void submitCode(View view){

@@ -72,7 +72,7 @@
                 android:gravity="center"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:text="@string/expandable1_content"
+                android:text="@string/demo_replace"
                 android:textColor="@color/expandable_content" />
 
         </com.github.florent37.expansionpanel.ExpansionLayout>
@@ -138,7 +138,7 @@
                 android:gravity="center"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:text="@string/expandable2_content"
+                android:text="@string/demo_replace"
                 android:textColor="@color/expandable_content" />
 
         </com.github.florent37.expansionpanel.ExpansionLayout>
