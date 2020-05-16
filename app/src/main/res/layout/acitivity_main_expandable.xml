@@ -201,7 +201,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:background="#4CAF50"
+                android:background="#00F188"
                 android:src="@drawable/cat" />
 
         </com.github.florent37.expansionpanel.ExpansionLayout>
