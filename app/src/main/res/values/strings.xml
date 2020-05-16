@@ -28,5 +28,5 @@
 
     <string name="attempt_solved">Yay! You have solved the puzzle</string>
     <string name="attempt_failed">Not the right code. Try again!</string>
-    <string name="attempt_error">Please fill all three fields with numbers and try again.</string>
+    <string name="attempt_error">Please enter three numbers to the field.</string>
 </resources>
