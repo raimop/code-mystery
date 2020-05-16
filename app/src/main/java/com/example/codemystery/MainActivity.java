@@ -22,7 +22,7 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
 
     TextView hint1, hint2, hint3, hint4;
-    EditText guessedNumberField;
+    EditText guessedNumberField, notes;
     String generatedNumber, enteredNumber;
     String savedGeneratedNumber;
     String hintFirst, hintSecond, hintThird, hintFourth;
@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences keepDataInMemory;
     SharedPreferences getDataFromMemory;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        notes = findViewById(R.id.notes);
 
         generateActionBar();
         startCodePuzzle();
@@ -165,12 +165,12 @@ public class MainActivity extends AppCompatActivity {
             enteredNumber = guessedNumberField.getText().toString();
             if(enteredNumber.equals(generatedNumber)){
                 FancyToast.makeText(this, getString(R.string.attempt_solved), 2, FancyToast.SUCCESS, false).show();
-
                 SharedPreferences secondsCount = this.getSharedPreferences("secondsCount", MODE_PRIVATE);
                 SharedPreferences.Editor seconds = secondsCount.edit();
                 seconds.putString("seconds", String.valueOf(count));
                 seconds.apply();
                 guessedNumberField.getText().clear();
+                notes.getText().clear();
                 generateNewRandomNumbers();
             } else {
                 FancyToast.makeText(this, getString(R.string.attempt_failed), 2, FancyToast.WARNING, false).show();
