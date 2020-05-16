@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="240dp"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -19,7 +19,7 @@
         <com.github.florent37.expansionpanel.ExpansionHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#5C02DC"
+            android:background="@color/expandable_title_bg"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             app:expansion_headerIndicator="@id/headerIndicator"
@@ -32,6 +32,7 @@
                 android:id="@+id/header1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
                 android:text="@string/expandable1_title"
                 android:textColor="@color/expandable_title"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -70,11 +71,11 @@
             <TextView
                 android:id="@+id/hint1"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#4CAF50"
+                android:layout_height="50dp"
+                android:background="@color/expandable_content_bg"
                 android:gravity="center"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:textColor="@color/expandable_content" />
 
         </com.github.florent37.expansionpanel.ExpansionLayout>
@@ -84,7 +85,7 @@
         <com.github.florent37.expansionpanel.ExpansionHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#5C02DC"
+            android:background="@color/expandable_title_bg"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             app:expansion_headerIndicator="@id/headerIndicator2"
@@ -97,6 +98,7 @@
                 android:id="@+id/header2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
                 android:text="@string/expandable2_title"
                 android:textColor="@color/expandable_title"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -136,11 +138,11 @@
             <TextView
                 android:id="@+id/hint2"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#4CAF50"
+                android:layout_height="50dp"
+                android:background="@color/expandable_content_bg"
                 android:gravity="center"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:textColor="@color/expandable_content" />
 
         </com.github.florent37.expansionpanel.ExpansionLayout>
@@ -150,7 +152,7 @@
         <com.github.florent37.expansionpanel.ExpansionHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#5C02DC"
+            android:background="@color/expandable_title_bg"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             app:expansion_headerIndicator="@id/headerIndicator3"
@@ -163,6 +165,7 @@
                 android:id="@+id/header3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
                 android:text="@string/expandable3_title"
                 android:textColor="@color/expandable_title"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -202,11 +205,11 @@
             <TextView
                 android:id="@+id/hint3"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#4CAF50"
+                android:layout_height="50dp"
+                android:background="@color/expandable_content_bg"
                 android:gravity="center"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:textColor="@color/expandable_content" />
 
         </com.github.florent37.expansionpanel.ExpansionLayout>
@@ -216,7 +219,7 @@
         <com.github.florent37.expansionpanel.ExpansionHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#5C02DC"
+            android:background="@color/expandable_title_bg"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             app:expansion_headerIndicator="@id/headerIndicator4"
@@ -229,6 +232,7 @@
                 android:id="@+id/header4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
                 android:text="@string/expandable4_title"
                 android:textColor="@color/expandable_title"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -268,25 +272,15 @@
             <TextView
                 android:id="@+id/hint4"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="#4CAF50"
+                android:layout_height="50dp"
+                android:background="@color/expandable_content_bg"
                 android:gravity="center"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:textColor="@color/expandable_content" />
 
         </com.github.florent37.expansionpanel.ExpansionLayout>
         <!-- Fourth tab end -->
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:lines="8"
-            android:maxLines="10"
-            android:minLines="6"
-            android:scrollbars="vertical"
-            android:hint="@string/notes_placeholder" />
 
     </LinearLayout>
 

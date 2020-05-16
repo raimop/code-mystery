@@ -4,46 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4565BD">
+    android:background="#FFFFFF">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#4CAF50"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/enteredNumber"
-            android:layout_width="260dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="51dp"
-            android:layout_marginLeft="51dp"
-            android:layout_marginTop="0dp"
-            android:inputType="numberDecimal"
-            android:letterSpacing="4"
-            android:maxLength="3"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/secondEnteredDigit"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </LinearLayout>
+    <EditText
+        android:id="@+id/enteredNumber"
+        android:layout_width="262dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="75dp"
+        android:backgroundTint="@color/expandable_title_bg"
+        android:inputType="numberDecimal"
+        android:letterSpacing="4"
+        android:maxLength="3"
+        android:textColor="#000000"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorLink="@color/expandable_title_bg"
+        android:textCursorDrawable="@drawable/cursor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/submitCode"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginStart="105dp"
-        android:layout_marginLeft="105dp"
-        android:background="@color/expandable_title_desc"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="131dp"
+        android:background="@drawable/rounded_button"
         android:freezesText="true"
         android:onClick="submitCode"
         android:text="@string/button_activity_main"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/button_color"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/enteredNumber" />
+
+    <EditText
+        android:id="@+id/textHelp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:hint="@string/notes_placeholder"
+        android:inputType="textMultiLine"
+        android:lines="4"
+        android:maxLines="10"
+        android:minLines="6"
+        android:scrollbars="vertical"
+        android:textColor="#000000"
+        android:textCursorDrawable="@drawable/cursor"
+        android:backgroundTint="@color/expandable_title_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submitCode" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

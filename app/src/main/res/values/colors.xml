@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#03DAC5</color>
 
-    <color name="expandable_title">#000000</color>
-    <color name="expandable_title_desc">#AAAAAA</color>
-    <color name="expandable_title_bg">#E8E8E8</color>
+    <color name="expandable_title">#FFFFFF</color>
+    <color name="expandable_title_desc">#808080</color>
+    <color name="expandable_title_bg">#000000</color>
 
     <color name="expandable_content">#000000</color>
     <color name="expandable_content_bg">#FFFFFF</color>
+
+    <color name="button_color">#FFFFFF</color>
+    <color name="button_bg">#000000</color>
+
+    <color name="scheme__black">#000000</color>
+    <color name="scheme__chinese_black">#141414</color>
+    <color name="scheme__eerie_black">#1B1B1B</color>
+    <color name="scheme__white">#FFFFFF</color>
+    <color name="scheme__anti_flash_white">#F3F3F3</color>
+    <color name="scheme__chinese_white">#E1E1E1</color>
 </resources>
