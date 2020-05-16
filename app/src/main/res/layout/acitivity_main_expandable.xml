@@ -282,16 +282,72 @@
         </com.github.florent37.expansionpanel.ExpansionLayout>
         <!-- Fourth tab end -->
 
-        <EditText
-            android:id="@+id/notes"
+        <!-- Fifth tab start -->
+        <com.github.florent37.expansionpanel.ExpansionHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textMultiLine"
-            android:lines="8"
-            android:maxLines="10"
-            android:minLines="6"
-            android:scrollbars="vertical"
-            android:hint="@string/notes_placeholder" />
+            android:background="@color/expandable_title_bg"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:expansion_headerIndicator="@id/headerIndicator5"
+            app:expansion_layout="@id/expansionLayout5"
+            app:expansion_toggleOnClick="true">
+
+            <!-- HEADER -->
+
+            <TextView
+                android:id="@+id/header5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:text="@string/expandable5_title"
+                android:textColor="@color/expandable_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="160dp"
+                android:text="@string/expandable5_desc"
+                android:textColor="@color/expandable_title_desc" />
+
+            <!-- HEADER INDICATOR -->
+
+            <ImageView
+                android:id="@+id/headerIndicator5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginLeft="16dp"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
+
+
+        </com.github.florent37.expansionpanel.ExpansionHeader>
+
+        <com.github.florent37.expansionpanel.ExpansionLayout
+            android:id="@+id/expansionLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EEE">
+
+            <TextView
+                android:id="@+id/hint5"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/expandable_content_bg"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/expandable_content" />
+
+        </com.github.florent37.expansionpanel.ExpansionLayout>
+        <!-- Fifth tab end -->
 
     </LinearLayout>
 
