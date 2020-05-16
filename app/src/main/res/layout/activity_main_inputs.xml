@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="#4565BD">
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
+        android:background="#4CAF50"
         android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -55,16 +57,15 @@
         android:id="@+id/submitCode"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginBottom="541dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginLeft="105dp"
+        android:background="@color/expandable_title_desc"
         android:freezesText="true"
         android:onClick="submitCode"
         android:text="@string/button_activity_main"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

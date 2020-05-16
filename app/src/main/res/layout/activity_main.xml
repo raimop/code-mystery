@@ -7,8 +7,14 @@
 
     <include layout="@layout/activity_main_inputs" />
 
-    <include layout="@layout/acitivity_main_code" />
+    <include
+        layout="@layout/acitivity_main_code"
+        tools:layout_editor_absoluteX="-50dp"
+        tools:layout_editor_absoluteY="-41dp" />
 
-    <include layout="@layout/acitivity_main_expandable"/>
+    <include
+        layout="@layout/acitivity_main_expandable"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="-28dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
