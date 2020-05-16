@@ -21,7 +21,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView generatedNumberField, hint1, hint2, hint3, hint4;
+    TextView hint1, hint2, hint3, hint4;
     EditText guessedNumberField;
     String generatedNumber, enteredNumber;
     String savedGeneratedNumber;
@@ -73,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
         hint3 = (TextView)findViewById(R.id.hint3);
         hint4 = (TextView)findViewById(R.id.hint4);
 
-        hint1.setText(String.valueOf(hint.oneCorrectWellPlaced()));
-        hint2.setText(String.valueOf(hint.oneCorrectWrongPlaced()));
-        hint3.setText(String.valueOf(hint.twoCorrectWrongPlaced()));
-        hint4.setText(String.valueOf(hint.noneCorrect()));
+        hint1.setText(hint.oneCorrectWellPlaced());
+        hint2.setText(hint.oneCorrectWrongPlaced());
+        hint3.setText(hint.twoCorrectWrongPlaced());
+        hint4.setText(hint.noneCorrect());
 
         //Log.i("CodeMystery-debug", "Actual: " + generatedNumber);
         //Log.i("CodeMystery-debug", "1good: " + hint.oneCorrectWellPlaced());
@@ -84,7 +84,6 @@ public class MainActivity extends AppCompatActivity {
         //Log.i("CodeMystery-debug", "2wrong: " + hint.twoCorrectWrongPlaced());
         //Log.i("CodeMystery-debug", "allwrong: " + hint.noneCorrect());
 
-        generatedNumberField = (TextView)findViewById(R.id.generatedNumber);
         if(!firstTimeAppOpen){
             loadPreviouslyGeneratedNumbers();
         } else {
@@ -95,15 +94,13 @@ public class MainActivity extends AppCompatActivity {
     public void loadPreviouslyGeneratedNumbers() {
         SharedPreferences getNumbersFromMemory = this.getSharedPreferences("codeNumbers", MODE_PRIVATE);
         savedGeneratedNumber = getNumbersFromMemory.getString("savedGeneratedNumber", "");
-        generatedNumberField.setText(savedGeneratedNumber);
         generatedNumber = savedGeneratedNumber;
     }
 
     public void generateNewRandomNumbers() {
-        generatedNumberField.setText(String.valueOf(generatedNumber));
         SharedPreferences keepNumbersInMemory = this.getSharedPreferences("codeNumbers", MODE_PRIVATE);
         SharedPreferences.Editor numbers = keepNumbersInMemory.edit();
-        numbers.putString("generatedNumberField", String.valueOf(generatedNumber));
+        numbers.putString("savedGeneratedNumber", String.valueOf(generatedNumber));
         numbers.apply();
         firstTimeAppOpen = false;
         startTimer();
