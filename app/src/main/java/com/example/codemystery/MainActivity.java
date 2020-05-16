@@ -65,19 +65,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startCodePuzzle(){
-        generatedNumber = getRandomNumberStringDefaultRange();
-        Hint hint = new Hint(generatedNumber);
-
-        hint1 = (TextView)findViewById(R.id.hint1);
-        hint2 = (TextView)findViewById(R.id.hint2);
-        hint3 = (TextView)findViewById(R.id.hint3);
-        hint4 = (TextView)findViewById(R.id.hint4);
-
-        hint1.setText(hint.oneCorrectWellPlaced());
-        hint2.setText(hint.oneCorrectWrongPlaced());
-        hint3.setText(hint.twoCorrectWrongPlaced());
-        hint4.setText(hint.noneCorrect() + "\nactual: " + generatedNumber);
-
         //Log.i("CodeMystery-debug", "Actual: " + generatedNumber);
         //Log.i("CodeMystery-debug", "1good: " + hint.oneCorrectWellPlaced());
         //Log.i("CodeMystery-debug", "1wrong: " + hint.oneCorrectWrongPlaced());
@@ -100,6 +87,19 @@ public class MainActivity extends AppCompatActivity {
     public void generateNewRandomNumbers() {
         SharedPreferences keepNumbersInMemory = this.getSharedPreferences("codeNumbers", MODE_PRIVATE);
         SharedPreferences.Editor numbers = keepNumbersInMemory.edit();
+        generatedNumber = getRandomNumberStringDefaultRange();
+        Hint hint = new Hint(generatedNumber);
+
+        hint1 = (TextView)findViewById(R.id.hint1);
+        hint2 = (TextView)findViewById(R.id.hint2);
+        hint3 = (TextView)findViewById(R.id.hint3);
+        hint4 = (TextView)findViewById(R.id.hint4);
+
+        hint1.setText(hint.oneCorrectWellPlaced());
+        hint2.setText(hint.oneCorrectWrongPlaced());
+        hint3.setText(hint.twoCorrectWrongPlaced());
+        hint4.setText(hint.noneCorrect() + "\nactual: " + generatedNumber);
+
         numbers.putString("savedGeneratedNumber", String.valueOf(generatedNumber));
         numbers.apply();
         firstTimeAppOpen = false;
