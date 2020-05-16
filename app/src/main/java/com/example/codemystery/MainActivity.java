@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         hint1.setText(hint.oneCorrectWellPlaced());
         hint2.setText(hint.oneCorrectWrongPlaced());
         hint3.setText(hint.twoCorrectWrongPlaced());
-        hint4.setText(hint.noneCorrect() + "\nactual: " + generatedNumber);
+        hint4.setText(hint.noneCorrect());
 
         numbers.putString("savedGeneratedNumber", String.valueOf(generatedNumber));
         numbers.apply();
