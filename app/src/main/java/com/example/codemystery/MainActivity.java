@@ -20,9 +20,13 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
+<<<<<<< HEAD
 
     TextView randomOne, randomTwo, randomThree;
+    EditText guessedNumber;
+=======
     EditText guessedOne, guessedTwo, guessedThree;
+>>>>>>> ed23ef62df406778e7f3098f8404dd2b752b1e9d
     int enteredFirst, enteredSecond, enteredThird;
     int firstRandom, secondRandom, thirdRandom;
     String firstNumberFromMemory, secondNumberFromMemory, thirdNumberFromMemory;
@@ -75,9 +79,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startCodePuzzle(){
-        randomOne = (TextView)findViewById(R.id.firstGeneratedNumber);
-        randomTwo = (TextView)findViewById(R.id.secondGeneratedNumber);
-        randomThree = (TextView)findViewById(R.id.thirdGeneratedNumber);
         if(!firstTimeAppOpen){
             loadPreviouslyGeneratedNumbers();
         } else {
@@ -90,21 +91,24 @@ public class MainActivity extends AppCompatActivity {
         firstNumberFromMemory = getNumbersFromMemory.getString("firstRandomValue", "");
         secondNumberFromMemory = getNumbersFromMemory.getString("secondRandomValue", "");
         thirdNumberFromMemory = getNumbersFromMemory.getString("thirdRandomValue", "");
-        randomOne.setText(firstNumberFromMemory);
-        randomTwo.setText(secondNumberFromMemory);
-        randomThree.setText(thirdNumberFromMemory);
         firstRandom = Integer.parseInt(firstNumberFromMemory);
         secondRandom = Integer.parseInt(secondNumberFromMemory);
         thirdRandom = Integer.parseInt(thirdNumberFromMemory);
     }
 
     public void generateNewRandomNumbers() {
-        firstRandom = (int)(Math.random() * 10 + 1);
-        secondRandom = (int)(Math.random() * 10 + 1);
-        thirdRandom = (int)(Math.random() * 10 + 1);
+<<<<<<< HEAD
+        firstRandom = (int)(Math.random() * 9 + 1);
+        secondRandom = (int)(Math.random() * 9 + 1);
+        thirdRandom = (int)(Math.random() * 9 + 1);
         randomOne.setText(String.valueOf(firstRandom));
         randomTwo.setText(String.valueOf(secondRandom));
         randomThree.setText(String.valueOf(thirdRandom));
+=======
+        firstRandom = (int)(Math.random() * 10 + 1);
+        secondRandom = (int)(Math.random() * 10 + 1);
+        thirdRandom = (int)(Math.random() * 10 + 1);
+>>>>>>> ed23ef62df406778e7f3098f8404dd2b752b1e9d
         SharedPreferences keepNumbersInMemory = this.getSharedPreferences("codeNumbers", MODE_PRIVATE);
         SharedPreferences.Editor numbers = keepNumbersInMemory.edit();
         numbers.putString("firstRandomValue", String.valueOf(firstRandom));
@@ -150,12 +154,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitCode(View view){
         try {
-            guessedOne = (EditText)findViewById(R.id.firstEnteredDigit);
-            guessedTwo = (EditText)findViewById(R.id.secondEnteredDigit);
-            guessedThree = (EditText)findViewById(R.id.thirdEnteredDigit);
-            enteredFirst = Integer.parseInt(guessedOne.getText().toString());
-            enteredSecond = Integer.parseInt(guessedTwo.getText().toString());
-            enteredThird = Integer.parseInt(guessedThree.getText().toString());
+            guessedNumber = (EditText)findViewById(R.id.enteredDigit);
+            String enteredNumber = guessedNumber.getText().toString();
+            String[] enteredNumbers = enteredNumber.split("");
+            enteredFirst = Integer.parseInt(enteredNumbers[0]);
+            enteredSecond = Integer.parseInt(enteredNumbers[1]);
+            enteredThird = Integer.parseInt(enteredNumbers[2]);
             if(firstRandom==enteredFirst && secondRandom==enteredSecond && thirdRandom==enteredThird){
                 FancyToast.makeText(this, getString(R.string.attempt_solved), 2, FancyToast.SUCCESS, false).show();
 
@@ -164,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
                 seconds.putString("seconds", String.valueOf(count));
                 seconds.apply();
                 timer.cancel(); // not working???
+                guessedNumber.getText().clear();
                 generateNewRandomNumbers();
             } else {
                 FancyToast.makeText(this, getString(R.string.attempt_failed), 2, FancyToast.WARNING, false).show();
