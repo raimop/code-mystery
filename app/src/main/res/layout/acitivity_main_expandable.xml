@@ -66,13 +66,13 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/hint1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="#4CAF50"
                 android:gravity="center"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:text="@string/demo_replace"
                 android:textColor="@color/expandable_content" />
 
         </com.github.florent37.expansionpanel.ExpansionLayout>
@@ -132,13 +132,13 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/hint2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="#4CAF50"
                 android:gravity="center"
                 android:paddingTop="20dp"
                 android:paddingBottom="20dp"
-                android:text="@string/demo_replace"
                 android:textColor="@color/expandable_content" />
 
         </com.github.florent37.expansionpanel.ExpansionLayout>
@@ -197,15 +197,84 @@
             android:layout_height="wrap_content"
             android:background="#EEE">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:background="#00F188"
-                android:src="@drawable/cat" />
+            <TextView
+                android:id="@+id/hint3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#4CAF50"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:textColor="@color/expandable_content" />
 
         </com.github.florent37.expansionpanel.ExpansionLayout>
         <!-- Third tab end -->
+
+        <!-- Fourth tab start -->
+        <com.github.florent37.expansionpanel.ExpansionHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#5C02DC"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            app:expansion_headerIndicator="@id/headerIndicator4"
+            app:expansion_layout="@id/expansionLayout4"
+            app:expansion_toggleOnClick="true">
+
+            <!-- HEADER -->
+
+            <TextView
+                android:id="@+id/header4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/expandable4_title"
+                android:textColor="@color/expandable_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="160dp"
+                android:text="@string/expandable4_desc"
+                android:textColor="@color/expandable_title_desc" />
+
+            <!-- HEADER INDICATOR -->
+
+            <ImageView
+                android:id="@+id/headerIndicator4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginLeft="16dp"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
+
+
+        </com.github.florent37.expansionpanel.ExpansionHeader>
+
+        <com.github.florent37.expansionpanel.ExpansionLayout
+            android:id="@+id/expansionLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#EEE">
+
+            <TextView
+                android:id="@+id/hint4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#4CAF50"
+                android:gravity="center"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:textColor="@color/expandable_content" />
+
+        </com.github.florent37.expansionpanel.ExpansionLayout>
+        <!-- Fourth tab end -->
 
     </LinearLayout>
 

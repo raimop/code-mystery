@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/firstEnteredDigit"
+            android:id="@+id/enteredNumber"
             android:layout_width="90dp"
             android:layout_height="80dp"
             android:layout_marginStart="51dp"
@@ -25,30 +25,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/secondEnteredDigit"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/secondEnteredDigit"
-            android:layout_width="90dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="0dp"
-            android:inputType="numberDecimal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/thirdEnteredDigit"
-            app:layout_constraintStart_toEndOf="@+id/firstEnteredDigit"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/thirdEnteredDigit"
-            android:layout_width="90dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="51dp"
-            android:layout_marginRight="51dp"
-            android:inputType="numberDecimal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/secondEnteredDigit"
             app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
