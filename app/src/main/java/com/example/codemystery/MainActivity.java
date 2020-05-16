@@ -20,13 +20,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
-<<<<<<< HEAD
-
     TextView randomOne, randomTwo, randomThree;
     EditText guessedNumber;
-=======
-    EditText guessedOne, guessedTwo, guessedThree;
->>>>>>> ed23ef62df406778e7f3098f8404dd2b752b1e9d
     int enteredFirst, enteredSecond, enteredThird;
     int firstRandom, secondRandom, thirdRandom;
     String firstNumberFromMemory, secondNumberFromMemory, thirdNumberFromMemory;
@@ -97,18 +92,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void generateNewRandomNumbers() {
-<<<<<<< HEAD
         firstRandom = (int)(Math.random() * 9 + 1);
         secondRandom = (int)(Math.random() * 9 + 1);
         thirdRandom = (int)(Math.random() * 9 + 1);
         randomOne.setText(String.valueOf(firstRandom));
         randomTwo.setText(String.valueOf(secondRandom));
         randomThree.setText(String.valueOf(thirdRandom));
-=======
         firstRandom = (int)(Math.random() * 10 + 1);
         secondRandom = (int)(Math.random() * 10 + 1);
         thirdRandom = (int)(Math.random() * 10 + 1);
->>>>>>> ed23ef62df406778e7f3098f8404dd2b752b1e9d
+        firstRandom = (int)(Math.random() * 10 + 1);
+        secondRandom = (int)(Math.random() * 10 + 1);
+        thirdRandom = (int)(Math.random() * 10 + 1);
         SharedPreferences keepNumbersInMemory = this.getSharedPreferences("codeNumbers", MODE_PRIVATE);
         SharedPreferences.Editor numbers = keepNumbersInMemory.edit();
         numbers.putString("firstRandomValue", String.valueOf(firstRandom));

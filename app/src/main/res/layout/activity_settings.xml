@@ -36,7 +36,6 @@
         android:layout_height="42dp"
         android:lineSpacingExtra="10sp"
         android:text="Hints on/off"
-        android:textOn="ON"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
