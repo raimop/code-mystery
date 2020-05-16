@@ -146,7 +146,8 @@ public class MainActivity extends AppCompatActivity {
                 SharedPreferences.Editor seconds = secondsCount.edit();
                 seconds.putString("seconds", String.valueOf(count));
                 seconds.apply();
-                timer.cancel(); // not working???
+                timer.cancel();
+                guessedNumberField.getText().clear();
                 generateNewRandomNumbers();
             } else {
                 FancyToast.makeText(this, getString(R.string.attempt_failed), 2, FancyToast.WARNING, false).show();
