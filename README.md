@@ -20,7 +20,7 @@ Kasutaja sisestab kolm numbrit ning vajutab nupule "ENTER CODE", mis ütleb kas 
 
 <img src="https://github.com/raimop/code-mystery/blob/master/app/src/main/res/drawable/splash_bg.png" height="300">
 
-<img src="https://github.com/raimop/code-mystery/blob/master/images/game-screen.png" height="300"> <!--valmis prototüübi pilt-->
+<img src="https://github.com/raimop/code-mystery/blob/redo-design/images/game-screen.png" height="300"> <!--valmis prototüübi pilt-->
 
 ## Liikmed
 Raimo Pregel<br>
