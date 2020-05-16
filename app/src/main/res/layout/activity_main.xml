@@ -14,7 +14,7 @@
 
     <include
         layout="@layout/acitivity_main_expandable"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="-28dp" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="59dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
