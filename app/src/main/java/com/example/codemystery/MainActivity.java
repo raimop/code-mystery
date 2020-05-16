@@ -21,11 +21,10 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView randomOne, randomTwo, randomThree;
-    EditText guessedOne, guessedTwo, guessedThree;
-    int enteredFirst, enteredSecond, enteredThird;
-    int firstRandom, secondRandom, thirdRandom;
-    String firstNumberFromMemory, secondNumberFromMemory, thirdNumberFromMemory;
+    TextView generatedNumberField, hint1, hint2, hint3, hint4;
+    EditText guessedNumberField;
+    String generatedNumber, enteredNumber;
+    String savedGeneratedNumber;
     static Timer timer;
     int count=0;
     boolean firstTimeAppOpen = true;
@@ -37,15 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
         generateActionBar();
         startCodePuzzle();
-
-        String actualNumber = getRandomNumberStringDefaultRange();
-        Hint hint = new Hint(actualNumber);
-
-        Log.i("CodeMystery-debug", "Actual: " + actualNumber);
-        Log.i("CodeMystery-debug", "1good: " + hint.oneCorrectWellPlaced());
-        Log.i("CodeMystery-debug", "1wrong: " + hint.oneCorrectWrongPlaced());
-        Log.i("CodeMystery-debug", "2wrong: " + hint.twoCorrectWrongPlaced());
-        Log.i("CodeMystery-debug", "allwrong: " + hint.noneCorrect());
     }
 
     public void generateActionBar(){
@@ -75,9 +65,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startCodePuzzle(){
-        randomOne = (TextView)findViewById(R.id.firstGeneratedNumber);
-        randomTwo = (TextView)findViewById(R.id.secondGeneratedNumber);
-        randomThree = (TextView)findViewById(R.id.thirdGeneratedNumber);
+        generatedNumber = getRandomNumberStringDefaultRange();
+        Hint hint = new Hint(generatedNumber);
+
+        hint1 = (TextView)findViewById(R.id.hint1);
+        hint2 = (TextView)findViewById(R.id.hint2);
+        hint3 = (TextView)findViewById(R.id.hint3);
+        hint4 = (TextView)findViewById(R.id.hint4);
+
+        hint1.setText(String.valueOf(hint.oneCorrectWellPlaced()));
+        hint2.setText(String.valueOf(hint.oneCorrectWrongPlaced()));
+        hint3.setText(String.valueOf(hint.twoCorrectWrongPlaced()));
+        hint4.setText(String.valueOf(hint.noneCorrect()));
+
+        //Log.i("CodeMystery-debug", "Actual: " + generatedNumber);
+        //Log.i("CodeMystery-debug", "1good: " + hint.oneCorrectWellPlaced());
+        //Log.i("CodeMystery-debug", "1wrong: " + hint.oneCorrectWrongPlaced());
+        //Log.i("CodeMystery-debug", "2wrong: " + hint.twoCorrectWrongPlaced());
+        //Log.i("CodeMystery-debug", "allwrong: " + hint.noneCorrect());
+
+        generatedNumberField = (TextView)findViewById(R.id.generatedNumber);
         if(!firstTimeAppOpen){
             loadPreviouslyGeneratedNumbers();
         } else {
@@ -87,29 +94,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void loadPreviouslyGeneratedNumbers() {
         SharedPreferences getNumbersFromMemory = this.getSharedPreferences("codeNumbers", MODE_PRIVATE);
-        firstNumberFromMemory = getNumbersFromMemory.getString("firstRandomValue", "");
-        secondNumberFromMemory = getNumbersFromMemory.getString("secondRandomValue", "");
-        thirdNumberFromMemory = getNumbersFromMemory.getString("thirdRandomValue", "");
-        randomOne.setText(firstNumberFromMemory);
-        randomTwo.setText(secondNumberFromMemory);
-        randomThree.setText(thirdNumberFromMemory);
-        firstRandom = Integer.parseInt(firstNumberFromMemory);
-        secondRandom = Integer.parseInt(secondNumberFromMemory);
-        thirdRandom = Integer.parseInt(thirdNumberFromMemory);
+        savedGeneratedNumber = getNumbersFromMemory.getString("savedGeneratedNumber", "");
+        generatedNumberField.setText(savedGeneratedNumber);
+        generatedNumber = savedGeneratedNumber;
     }
 
     public void generateNewRandomNumbers() {
-        firstRandom = (int)(Math.random() * 10 + 1);
-        secondRandom = (int)(Math.random() * 10 + 1);
-        thirdRandom = (int)(Math.random() * 10 + 1);
-        randomOne.setText(String.valueOf(firstRandom));
-        randomTwo.setText(String.valueOf(secondRandom));
-        randomThree.setText(String.valueOf(thirdRandom));
+        generatedNumberField.setText(String.valueOf(generatedNumber));
         SharedPreferences keepNumbersInMemory = this.getSharedPreferences("codeNumbers", MODE_PRIVATE);
         SharedPreferences.Editor numbers = keepNumbersInMemory.edit();
-        numbers.putString("firstRandomValue", String.valueOf(firstRandom));
-        numbers.putString("secondRandomValue", String.valueOf(secondRandom));
-        numbers.putString("thirdRandomValue", String.valueOf(thirdRandom));
+        numbers.putString("generatedNumberField", String.valueOf(generatedNumber));
         numbers.apply();
         firstTimeAppOpen = false;
         startTimer();
@@ -150,13 +144,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitCode(View view){
         try {
-            guessedOne = (EditText)findViewById(R.id.firstEnteredDigit);
-            guessedTwo = (EditText)findViewById(R.id.secondEnteredDigit);
-            guessedThree = (EditText)findViewById(R.id.thirdEnteredDigit);
-            enteredFirst = Integer.parseInt(guessedOne.getText().toString());
-            enteredSecond = Integer.parseInt(guessedTwo.getText().toString());
-            enteredThird = Integer.parseInt(guessedThree.getText().toString());
-            if(firstRandom==enteredFirst && secondRandom==enteredSecond && thirdRandom==enteredThird){
+            guessedNumberField = (EditText)findViewById(R.id.enteredNumber);
+            enteredNumber = guessedNumberField.getText().toString();
+            if(enteredNumber.equals(generatedNumber)){
                 FancyToast.makeText(this, getString(R.string.attempt_solved), 2, FancyToast.SUCCESS, false).show();
 
                 SharedPreferences secondsCount = this.getSharedPreferences("secondsCount", MODE_PRIVATE);
