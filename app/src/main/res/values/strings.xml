@@ -2,6 +2,7 @@
     <string name="app_name">Code Mystery</string>
     <string name="code_title">Crack the code!</string>
     <string name="settings_image">settings image</string>
+    <string name="notes_placeholder">Write notes to yourself...</string>
 
     <string name="activity_main">Main text</string>
     <string name="activity_settings">Here comes settings</string>
