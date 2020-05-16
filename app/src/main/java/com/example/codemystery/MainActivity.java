@@ -20,8 +20,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
-
-    TextView randomOne, randomTwo, randomThree;
     EditText guessedOne, guessedTwo, guessedThree;
     int enteredFirst, enteredSecond, enteredThird;
     int firstRandom, secondRandom, thirdRandom;
@@ -75,9 +73,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startCodePuzzle(){
-        randomOne = (TextView)findViewById(R.id.firstGeneratedNumber);
-        randomTwo = (TextView)findViewById(R.id.secondGeneratedNumber);
-        randomThree = (TextView)findViewById(R.id.thirdGeneratedNumber);
         if(!firstTimeAppOpen){
             loadPreviouslyGeneratedNumbers();
         } else {
@@ -90,9 +85,6 @@ public class MainActivity extends AppCompatActivity {
         firstNumberFromMemory = getNumbersFromMemory.getString("firstRandomValue", "");
         secondNumberFromMemory = getNumbersFromMemory.getString("secondRandomValue", "");
         thirdNumberFromMemory = getNumbersFromMemory.getString("thirdRandomValue", "");
-        randomOne.setText(firstNumberFromMemory);
-        randomTwo.setText(secondNumberFromMemory);
-        randomThree.setText(thirdNumberFromMemory);
         firstRandom = Integer.parseInt(firstNumberFromMemory);
         secondRandom = Integer.parseInt(secondNumberFromMemory);
         thirdRandom = Integer.parseInt(thirdNumberFromMemory);
@@ -102,9 +94,6 @@ public class MainActivity extends AppCompatActivity {
         firstRandom = (int)(Math.random() * 10 + 1);
         secondRandom = (int)(Math.random() * 10 + 1);
         thirdRandom = (int)(Math.random() * 10 + 1);
-        randomOne.setText(String.valueOf(firstRandom));
-        randomTwo.setText(String.valueOf(secondRandom));
-        randomThree.setText(String.valueOf(thirdRandom));
         SharedPreferences keepNumbersInMemory = this.getSharedPreferences("codeNumbers", MODE_PRIVATE);
         SharedPreferences.Editor numbers = keepNumbersInMemory.edit();
         numbers.putString("firstRandomValue", String.valueOf(firstRandom));
