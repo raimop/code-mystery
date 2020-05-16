@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         hint1.setText(hint.oneCorrectWellPlaced());
         hint2.setText(hint.oneCorrectWrongPlaced());
         hint3.setText(hint.twoCorrectWrongPlaced());
-        hint4.setText(hint.noneCorrect());
+        hint4.setText(hint.noneCorrect() + "\nactual: " + generatedNumber);
 
         //Log.i("CodeMystery-debug", "Actual: " + generatedNumber);
         //Log.i("CodeMystery-debug", "1good: " + hint.oneCorrectWellPlaced());
