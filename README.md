@@ -15,12 +15,12 @@ Vihjed:
 3. 305 ning selle kõrval olev tekst: "Ükski arv ei ole õige." <br>
 <br>
 Rakenduses on kasutajal võimalik teha ka mängu ajal märkmeid. <br>
-Kasutaja sisestab kolm numbrit ning vajutab nupule "Crack the code!", mis ütleb kas tegu oli õige koodiga või mitte. Õige koodi leidmise korral mäng lõppeb ning kasutajal on võimalus hakata arvama uut koodi. Vale koodi puhul mäng jätkub, kuni kood leitakse. Numbrite sisestamise katsete arv ei ole piiratud.
+Kasutaja sisestab kolm numbrit ning vajutab nupule "ENTER CODE", mis ütleb kas tegu oli õige koodiga või mitte. Õige koodi leidmise korral mäng lõppeb ning kasutajal on võimalus hakata arvama uut koodi. Vale koodi puhul mäng jätkub, kuni kood leitakse. Numbrite sisestamise katsete arv ei ole piiratud.
 
 
-<img src="https://github.com/raimop/code-mystery/blob/master/app/src/main/res/drawable/splash_bg.jpg" height="300">
+<img src="https://github.com/raimop/code-mystery/blob/master/app/src/main/res/drawable/splash_bg.png" height="300">
 
-<img src="https://github.com/raimop/code-mystery/blob/master/app/src/main/res/drawable/splash_bg.jpg" height="300"> <!--valmis prototüübi pilt-->
+<img src="https://github.com/raimop/code-mystery/blob/redo-design/images/game-screen.png" height="300"> <!--valmis prototüübi pilt-->
 
 ## Liikmed
 Raimo Pregel<br>

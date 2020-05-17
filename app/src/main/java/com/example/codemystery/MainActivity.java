@@ -21,7 +21,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView hint1, hint2, hint3, hint4;
+    TextView hint1, hint2, hint3, hint4, hint5;
     EditText guessedNumberField, notes;
     String generatedNumber, enteredNumber;
     String savedGeneratedNumber;
@@ -121,10 +121,12 @@ public class MainActivity extends AppCompatActivity {
         hint2 = findViewById(R.id.hint2);
         hint3 = findViewById(R.id.hint3);
         hint4 = findViewById(R.id.hint4);
+        hint5 = findViewById(R.id.hint5);
         hint1.setText(hintFirst);
         hint2.setText(hintSecond);
         hint3.setText(hintThird);
-        hint4.setText(hintFourth + "\nactual: " + generatedNumber);
+        hint4.setText(hintFourth);
+        hint5.setText(generatedNumber);
     }
 
     public void startTimer(){

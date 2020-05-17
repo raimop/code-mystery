@@ -24,8 +24,8 @@
     <string name="expandable4_title">Hint 4</string>
     <string name="expandable4_desc">None correct</string>
 
-    <string name="expandable5_title">Hint 5</string>
-    <string name="expandable5_desc">One correct, wrong placed</string>
+    <string name="expandable5_title">SPOILER!</string>
+    <string name="expandable5_desc">SPOILER!</string>
 
     <string name="attempt_solved">Yay! You have solved the puzzle</string>
     <string name="attempt_failed">Not the right code. Try again!</string>
